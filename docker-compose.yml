@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  devotional:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./inject:/inject
+      - ./songs:/songs
+    environment:
+      - OLLAMA_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=llama3
+      - WEEK_1_TOPIC=faith
+      - WEEK_2_TOPIC=hope
+      - WEEK_3_TOPIC=prayer
+      - WEEK_4_TOPIC=love
