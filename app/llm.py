@@ -1,4 +1,9 @@
+import os
 import requests
+
+OLLAMA_URL = os.getenv("OLLAMA_URL", "http://ollama:11434")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3")
+
 from config import MIN_WORDS
 
 def generate_reflection(topic, verses):
