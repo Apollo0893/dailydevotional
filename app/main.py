@@ -5,7 +5,13 @@ from audio import narrate, combine
 from config import *
 
 def run():
+    folder = "/inject"
     text = build_devotional(TOPIC)
+
+    text_file = os.path.join(folder, "devotional.txt")
+        with open(text_file, "w", encoding="utf-8") as f:
+            f.write(text)
+            
     narration = "/tmp/narration.mp3"
     asyncio.run(narrate(text, VOICE, narration))
 
