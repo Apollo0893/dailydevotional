@@ -5,12 +5,16 @@ from audio import narrate, combine
 from config import *
 
 def run():
-    folder = "/inject"
     text = build_devotional(TOPIC)
 
-    text_file = os.path.join(folder, "devotional.txt")
-        with open(text_file, "w", encoding="utf-8") as f:
-            f.write(text)
+    # Get the INJECT_DIR from your config
+    devotional_file = os.path.join(INJECT_DIR, 'daily_devotional.txt')
+    
+    # Write the devotional text to a file in the INJECT_DIR
+    with open(devotional_file, 'w') as f:
+        f.write(text)
+    
+    print(f"Devotional written to: {devotional_file}")
             
     narration = "/tmp/narration.mp3"
     asyncio.run(narrate(text, VOICE, narration))
