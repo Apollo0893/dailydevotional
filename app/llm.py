@@ -12,6 +12,7 @@ Write a Christian devotional reflection on the topic "{topic}".
 
 Requirements:
 - At least {MIN_WORDS} words
+- No headers should and should be free flowing with no text that is not intended to be spoken
 - Add additional verses for context of your choosing that fit with provided examples
 - Scripture-centered
 - Pastoral tone
